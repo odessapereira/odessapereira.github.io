@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Projet Cartes | Règles du jeu</title>
+    <meta name="author" content="Fariza Amzal" />
+    <meta name="description" content="Présentation du projet GLP 2025 Cartes"/>
+    <meta name="keywords" content="GLP, Cartes, Projet"/>
+    <link rel="icon" type="image/png" href="./images/faviconcarte.png"/>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="./images/faviconcarte.png" alt="photo cartes" width="70"/></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Présentation</a></li>
+                    <li><a href="membres.html">Membres</a></li>
+                    <li><a href="regles.html">Règles du jeu</a></li>
+                    <li><a href="fonctionnalites.html">Fonctionnalités</a></li>
+                    <li><a href="histoire.html">Histoire</a></li>
+                    <li><a href="avenir.html">Avenir</a></li>
+                </ul>
+            </nav>
+    </header>
+
+    <main>
+
+        <!-- Bouton pour ouvrir le menu -->
+      <a href="#sidebar" id="menuButton">☰ Menu</a>
+      <!-- Menu latéral -->
+      <aside class="sidebar" id="sidebar">
+      <a href="#close-btn" class="close-btn">✖</a>
+        <ul>
+            <li><a href="#Jeu">Comment on joue ?</a></li>
+            <li><a href="#distribution">Distribution des cartes</a></li>
+            <li><a href="#deroulement">Déroulement d'un tour</a></li>
+            <li><a href="#cas">Différents cas</a></li>
+            <li><a href="#pioche">Pioche</a></li>
+            <li><a href="#cartes">Cartes spéciales</a></li>
+            <li><a href="#hierarchie">Hiérarchie des cartes</a></li>
+            <li><a href="#fin">Fin de partie</a></li>
+        </ul>
+    </aside>
+
+        <h1>Règles du jeu</h1>
+        <section>
+            <h2 id="Jeu">Comment on joue ?</h2>
+            <p>Les règles du jeu s'appliquent à la fois au joueur humain et aux bots. Ces règles incluent la gestion des
+                cartes (valeurs, couleurs, cartes spéciales), la vérification des combinaisons valides, et l'application des tours
+                de jeu.</p>
+                <p><strong>Interaction entre l'humain et l'ordinateur :</strong> La partie se déroule en alternance entre le joueur humain et
+                les bots, qui suivent des règles similaires mais réagissent de manière différente en fonction de leur caractère.
+                Le joueur humain devra s’adapter à ces comportements pour gagner la partie.</p>
+                <p><strong>Début de la partie :</strong> Le joueur (humain) commence.</p>
+                <p><strong>Fin de la partie :</strong> La partie prend fin lorsqu’un joueur (humain ou bots) se débarrasse de toutes ses
+                cartes. Le gagnant est celui qui a réussi à vider sa main en premier.</p>
+                <p>Il y a beaucoup de contraintes liées aux règles du jeu quant à leur complexité, il y a de nombreuses
+                exceptions qu’il faut prendre en compte dans la programmation du jeu.</p>
+            <p>Plongeons maintenant dans une explication détaillée de ces règles.</p>
+        </section>
+        <section>
+            <h2 id="distribution">Distribution des cartes</h2>
+            <h3>Nombre de cartes distribuées </h3>
+            <p>En fonction du nombre de joueurs, le nombre de cartes distribuées peut varier :</p>
+                <ul>    
+                    <li><strong>2-3 joueurs:</strong> 7 cartes par joueur.</li>
+                    <li><strong>4-5 joueurs:</strong> 5 cartes par joueur.</li>
+                    <li><strong>6 joueurs ou plus:</strong> 4 cartes par joueur.</li>
+               </ul>
+                <p>Après la distribution, les cartes restantes forment la pioche. Les joueurs vont ensuite jouer leur tour en suivant la règle des cartes strictes.</p>
+                <h3>Le joueur qui commence</h3>
+                <p>Le joueur qui possède la carte la plus faible (le 3 de trèfle) commence la partie. C’est la base de l’ordre de début. Cette règle garantit que le joueur avec la carte la plus faible entame le jeu, et il devra jouer cette carte, permettant aux autres joueurs de commencer à poser leurs cartes progressivement.</p>
+        </section>   
+        <section>
+            <h2 id="deroulement">Déroulement d'un tour</h2>
+            <article>
+                <h3>Ordre de jeu </h3>
+                <p>Le jeu se déroule dans le sens horaire, chaque joueur joue à son tour. Le premier joueur joue une carte de sa main, et chaque joueur suivant doit poser une carte supérieure de +1 par rapport à celle qui a été jouée avant lui.</p>
+            </article>
+            <article>
+                <h3>Quand un joueur ne peut pas jouer</h3>
+                <p>Si un joueur n’a pas de carte qui respecte la règle , il doit dire <strong>Passe</strong> et ne joue aucune carte ce tour-là. Toutefois, dire "passe" n'empêche pas le joueur de participer au tour suivant.</p>
+                <h3>Stratégie de "Passe"</h3>
+                <p>Le fait de dire "passe" peut être stratégique, surtout lorsqu'on veut éviter de jouer une carte que l’on pourrait utiliser plus tard ou pour forcer les autres joueurs à passer également. Cela peut être particulièrement utile si vous avez des cartes puissantes comme un 2, une bombe ou un joker que vous souhaitez conserver pour plus tard.</p>
+            </article>
+        </section>
+        <section>
+            <h2 id="cas">Cas où tout le monde passe</h2>
+            <p>Si tous les joueurs passent, cela signifie qu'aucun joueur n'a de carte à jouer (ou ne veut jouer de carte à ce moment-là).
+                    Dans ce cas :
+                    Fin de la manche : La manche est terminée.
+                    Pioche : Chaque joueur pioche une carte. Selon les règles définies, chaque joueur peut piocher une carte (ou parfois plusieurs cartes, par exemple 1 carte supplémentaire).
+                    Reprise de la partie : Le joueur qui a posé la dernière carte valide commence une nouvelle manche avec la carte ou la combinaison de son choix. Cela offre une certaine flexibilité et permet à ce joueur de contrôler le début de la nouvelle manche.</p>
+        </section>
+        <section>
+            <h2>Cas où un joueur pose un 2</h2>
+            <p>Le 2 est une carte spéciale dans le jeu. C'est une carte puissante qui permet de stopper immédiatement une manche et d'introduire des conséquences particulières :
+                Arrêt de la manche : Quand un joueur pose un 2, la manche prend immédiatement fin, et personne ne pioche de cartes.
+                Le joueur qui pose un 2 commence la nouvelle manche avec la carte de son choix. Cela peut être un avantage stratégique majeur, car cela permet de choisir une carte qui conviendra à la situation et pourrait forcer les autres à passer ou à s'adapter.
+                Poser un 2 en dernier :
+                Si un joueur pose un 2 en dernier, il gagne directement la partie, à condition qu'il n'ait plus d'autres cartes dans sa main. Cela fait du 2 une carte clé dans la stratégie de fin de partie.</p>
+        </section>
+        <section>
+            <h2 id="pioche">Pioche de cartes</h2>
+            <p>La pioche se fait uniquement lorsqu'un joueur ne peut pas jouer une carte et choisit de passer. Mais <strong>attention</strong> : La pioche ne se fait pas immédiatement après un passe, elle ne se fait que lorsque tout le monde a passé.</p>
+        </section>
+            <section>
+                <h2 id="cartes">Cartes spéciales</h2>
+                <article>
+                    <h3>Les bombes</h3>
+                    <p>Une bombe est une combinaison de quatre cartes identiques (par exemple, quatre 8). La bombe peut être jouée à tout moment pour arrêter la manche, même si la carte précédente ne correspond pas à cette combinaison. Après avoir posé une bombe, le joueur qui l’a jouée commence la nouvelle manche.</p>
+                </article>
+                <figure class="cartes-jeu">
+                <img src="./images/Bombe.jpeg" alt="Bombe" width="100" />
+                </figure>
+                <article>
+                    <h3>Les jokers</h3>
+                    <p>Le joker peut remplacer n'importe quelle carte et permet de jouer sur n'importe quelle carte précédente, même si cette carte n'est pas directement liée à la progression.</p>
+                </article>
+                <figure class="cartes-jeu">
+                <img src="./images/JokerCard.jpeg" alt="Joker" width="100"/>
+                </figure>
+            </section>
+            <section>
+                <h2 id="hierarchie">Hiérarchie des cartes</h2>
+                <p> Ordre des cartes : Les cartes sont classées de manière ascendante : 3 - 4 - 5 - 6 - 7 - 8 - 9 - 10 - Valet - Dame - Roi - As
+                    Le 2 est une carte spéciale qui bat toutes les autres cartes, mais il ne peut pas être suivi par une autre carte.
+                    Les bombes battent tout, même un 2. Si un joueur pose une bombe, cela écrase toutes les cartes précédentes.
+                    Les jokers surpassent même les bombes, ce qui en fait une carte extrêmement puissante si elle est utilisée correctement.</p>
+                    <figure class="cartes-jeu">
+                        <img src="./images/Cards.jpeg" alt="Cartes" width="100"/>
+                        </figure>
+            </section>
+            <section>
+                <h2 id="fin">Conditions de fin de partie</h2>
+                <p> La partie se termine lorsque un joueur se débarrasse de toutes ses cartes et est déclaré gagnant.
+                    Si plusieurs joueurs restent avec des cartes, ils continuent jusqu'à ce que tout le monde ait terminé. Les autres positions sont ensuite déterminées en fonction du nombre de cartes restantes dans la main des joueurs.</p>
+            </section>
+            <div><a href="#">Retour en haut de page</a></div>
+        </main>
+        <footer>
+            <nav>
+                <ul>
+                    <li class="arrowLeft-link"><a href="membres.html"><img src="./images/arrowIconLeft.png" alt="Flèche" width="25"/></a></li>
+                    <li><a href="index.html">1</a></li>
+                    <li><a href="membres.html">2</a></li>
+                    <li><a href="regles.html">3</a></li>
+                    <li><a href="fonctionnalites.html">4</a></li>
+                    <li><a href="histoire.html">5</a></li>
+                    <li><a href="avenir.html">6</a></li>
+                    <li class="arrow-link"><a href="fonctionnalites.html"><img src="./images/arrowIconRight.png" alt="Flèche" width="25"/></a></li>
+                </ul>
+            </nav>
+            <a href="https://www.cyu.fr/"><img src="./images/cylogo.png" alt="logo cy " width="100" /></a>
+            <div>&#169; Fariza AMZAL, Nadjib MOUSSAOUI, Odessa TRIOLLET-PEREIRA</div>
+            <div>mis à jour le 06 fév. 2025</div>
+        </footer>
+    </body>
+</html>
