@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="author" content="Fariza Amzal"/>
+    <meta name ="keywords" content="GLP, Cartes, Projet"/>
+    <meta name="description" content="Présentation du projet GLP 2025 Cartes"/>
+    <link rel="icon" type="image/png" href="./images/faviconcarte.png"/>
+    <link rel="stylesheet" href="style.css"/>
+    <title>Projet Cartes | Spécifactions ET Fonctionnalités </title>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="./images/faviconcarte.png" alt="photo cartes" width="70"/></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Présentation</a></li>
+                <li><a href="membres.html">Membres</a></li>
+                <li><a href="regles.html">Règles du jeu</a></li>
+                <li><a href="fonctionnalites.html">Fonctionnalités</a></li>
+                <li><a href="histoire.html">Histoire</a></li>
+                <li><a href="avenir.html">Avenir</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <!-- Bouton pour ouvrir le menu -->
+      <a href="#sidebar" id="menuButton">☰ Menu</a>
+      <!-- Menu latéral -->
+      <aside class="sidebar" id="sidebar">
+      <a href="#close-btn" class="close-btn">✖</a>
+            <ul>
+                <li><a href="#spesification">Spécifactions</a></li>
+                <li><a href="#Fonctionnalites">Fonctionnalités</a></li>
+            </ul>
+        </aside>
+
+        <h1>Spécifications ET Fonctionnalités</h1>
+            <section>
+                <h2 id="spesification">Spécifactions</h2>
+                <article>
+                    <h3>Le joueur/utilisateur</h3>
+                    <p>
+                        Le jeu est conçu pour qu'il y ait un seul joueur humain qui interagit avec l'interface graphique. Ce
+                        joueur pourra voir ses cartes et celles posées sur le paquet, jouer des combinaisons ou passer son tour.
+                        Interface utilisateur (IHM) : Le joueur humain doit pouvoir interagir facilement avec le jeu via l'IHM,
+                        notamment en choisissant les cartes à jouer ou en décidant de passer son tour. L'IHM doit afficher clairement
+                        ses cartes et les actions possibles.
+                        Gestion des entrées utilisateur : Le joueur doit pouvoir cliquer sur les cartes pour les sélectionner et
+                        effectuer les actions en fonction des règles du jeu
+                    </p>
+                </article>
+                <article>
+                    <h3>Les joueurs bots</h3>
+                    <p>
+                        Le reste des joueurs sont des bots. Chaque bot possède un caractère et une stratégie de jeu. Ces
+                        caractères peuvent inclure des stratégies comme : </p> 
+                        <ul>    
+                            <li><em>Aventurier :</em> Joue de manière agressive, cherchant à se débarrasser rapidement de ses cartes.</li>
+                            <li><em>Réservé : </em> Prend des décisions plus prudentes et attend le bon moment pour jouer.</li>
+                            <li><em>Equilibré : </em> Utilise une stratégie équilibrée, jouant selon les cartes disponibles sans prendre trop de
+                                risques.</li>  
+                        </ul>          
+                    <p>Le programme doit être capable de simuler un comportement humain basé sur sa stratégie. Les bots
+                        doivent pouvoir analyser les cartes de leur main et les cartes déjà posées pour prendre des décisions en
+                        fonction des règles.</p>
+                    <p>
+                        <strong>Tour des bots : </strong> Les bots jouent automatiquement à leur tour, sans interaction directe de l'utilisateur.
+                        Leur programmation doit être suffisamment robuste pour assurer une bonne expérience de jeu.
+                    </p>
+                </article>
+                <article>
+                    <h3>Les règles du jeu</h3>
+                    <p>les règles du jeu s'appliquent à la fois au joueur humain et aux bots. Ces règles incluent la gestion des
+                        cartes (valeurs, couleurs, cartes spéciales), la vérification des combinaisons valides, et l'application des tours
+                        de jeu.</p>
+                    <p>Interaction entre l'humain et l'ordinateur : La partie se déroule en alternance entre le joueur humain et
+                        les bots, qui suivent des règles similaires mais réagissent de manière différente en fonction de leur caractère.
+                        Le joueur humain devra s’adapter à ces comportements pour gagner la partie.</p>
+                    <p><em>Début de la partie :</em> Le joueur (humain) commence.</p>
+                    <p><em> Fin de la partie :</em> La partie prend fin lorsqu’un joueur (humain ou bots) se débarrasse de toutes ses
+                        cartes. Le gagnant est celui qui a réussi à vider sa main en premier.
+                        Il y a beaucoup de contraintes liées aux règles du jeu quant à leur complexité, il y a de nombreuses
+                        exceptions qu’il faut prendre en compte dans la programmation du jeu</p>
+                </article>
+                <article>
+                    <h3>Les cartes</h3>
+                    <p>Les cartes sont celles d’un jeu de 54 cartes avec des symboles (carreau, pique, trèfle, coeur) des
+                        chiffres allant de 1 à 10, des têtes allant du valet au roi ainsi que les jokers. Les cartes suivent une hiérarchie et certaines cartes sont spéciales :
+                    </p>
+                    <ul>
+                        <li><em>Le 2 :</em> permet de bloquer la partie (sauf bombes) et donne la main à celui qui l’a posé</li>
+                        <li><em>Le joker :</em>peut remplacer n’importe qu’elle carte dans une série ou un double</li>
+                    </ul>
+                    <p>La gestion des cartes inclut leur distribution initiale aux joueurs, leur affichage pour la main du joueur
+                        humain ainsi que leur validation suivant les règles du jeu au moment ou elles sont jouées.</p>
+                    <p>Les combinaisons de cartes possibles sont les suivantes :</p>
+                    <ul>
+                        <li><em>Double : </em> 2 cartes de même valeur</li>
+                        <li><em>Série : </em> 3 cartes ou plus dont les valeurs se suivent</li>
+                        <li><em>Bombe : </em> 3 cartes de même valeur (ou plus, par conséquent plus puissante)</li>
+                    </ul>
+                    <p>Il faut donc gérer toutes ces conditions sur les cartes afin d’y permettre l’application des règles du jeu,
+                        et donc analyser a chaque fois toutes les cartes de tout le monde</p>
+                </article>
+            </section>
+            <section>
+                <h2 id="Fonctionnalites">Fonctionnalités attendues du projet</h2>
+                <article>
+                    <h3>Gestion des joueurs</h3>
+                    <ul>
+                        <li>Démarrer une partie et choisir combien de joueurs il doit affronter(par exemple, entre 2 et 5
+                            joueurs).</li>
+                        <li>Les joueurs jouent à tour de rôle, et le jeu doit suivre l’ordre des joueurs.</li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>Distribution des cartes</h3>
+                    <ul>
+                        <li>Chaque joueur reçoit 5 cartes au début.</li>
+                        <li>Le reste des cartes est placé au centre pour former une pioche (pile face cachée).</li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>Gestion des tours</h3>
+                    <p>Un joueur doit pouvoir : </p>
+                    <ul>
+                        <li>Poser une carte ou une combinaison de cartes sur la table (comme une paire ou une
+                            suite).</li>
+                        <li>Passer son tour s’il ne peut pas jouer (ou s’il préfère ne pas jouer).</li>
+                        <li>Piocher une carte si tout le monde a passé son tour.</li>
+                    </ul>
+                    <ul>
+                        <li>Le tour passe automatiquement au joueur suivant jusqu’à ce qu’un nouveau tour commence.</li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>Règles du jeu </h3>
+                    <ul>
+                        <li>Le jeu doit vérifier si la carte ou la combinaison posée est valide (par exemple, une paire ou
+                            une suite).</li>
+                        <li>Il doit vérifier si la combinaison posée est plus forte que celle déjà sur la table.</li>
+                        <li>Les jokers doivent être pris en compte :
+                            <ul>
+                                <li>Ils peuvent remplacer n’importe quelle carte dans une combinaison</li>
+                                <li>Ils peuvent être joués en double pour battre toutes les autres cartes</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>Détection des combinaisons spéciales</h3>
+                    <ul>
+                        <li>Si un joueur pose une bombe (exemple : 4 cartes identiques ou une longue suite), cela doit
+                            battre toutes les autres combinaisons.</li>
+                        <li>S’il joue une combinaison que personne ne peut battre, il peut déclarer "Tu n’y peux rien"</li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>Fin de la partie </h3>
+                    <ul>
+                        <li>Le jeu doit détecter quand un joueur n’a plus de cartes en main (il a gagné)</li>
+                        <li>Les autres joueurs payent le gagnant suivant ce qu’il leur reste en main, l’argent est dans les
+                            cagnottes.</li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>Interface utilisateur simple</h3>
+                    <p>Le joueur doit afficher : </p>
+                    <ul>
+                       <li>Les cartes du joueur.</li> 
+                       <li>Nombre de joueurs.</li>
+                       <li>Les combinaisons posées sur la table.</li>
+                       <li>Les actions possibles à chaque tour (poser, passer, piocher).</li>
+                       <li>Le temps du jeu.</li>
+                       <li>le tour du joueur présent.</li>
+                       <li>Progression des joueurs.</li>
+                       <li>Messages de fin de partie.</li>
+                       <li>Montant des cagnottes.</li>
+                       <li>Statistiques en temps réel.</li>
+                       <li>Système d’alerte.</li>
+                    </ul>
+                </article>
+                <article>
+                    <h3>Option de rejouer</h3>
+                    <ul>
+                        <li>Une fois qu’une partie est terminée, proposer de jouer une nouvelle manche avec les mêmes
+                            joueurs ou en ajoutant d’autres joueurs</li>
+                    </ul>
+                </article>
+            </section>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li class="arrowLeft-link"><a href="regles.html"><img src="./images/arrowIconLeft.png" alt="Flèche" width="25"/></a></li>
+                <li><a href="index.html">1</a></li>
+                <li><a href="membres.html">2</a></li>
+                <li><a href="regles.html">3</a></li>
+                <li><a href="fonctionnalites.html">4</a></li>
+                <li><a href="histoire.html">5</a></li>
+                <li><a href="avenir.html">6</a></li>
+                <li class="arrow-link"><a href="histoire.html"><img src="./images/arrowIconRight.png" alt="Flèche" width="25"/></a></li>
+            </ul>
+        </nav>
+        <a href="https://www.cyu.fr/"> <img src="./images/cylogo.png" alt="logo cy " width="100"/> </a>
+        <div>&#169; Fariza AMZAL, Nadjib MOUSSAOUI, Odessa TRIOLLET-PEREIRA</div>
+        <div>mis à jour le 06 fév. 2025</div>
+    </footer>
+    
+</body>
+</html>
